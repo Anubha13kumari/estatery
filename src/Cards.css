@@ -1,1 +1,38 @@
-
+.cards__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50%;
+ 
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+.cards__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-radius: 1rem;
+}
+.cards__card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.stathome__img {
+  height: 80%;
+  width: 100%;
+}
+.cards__heart {
+  border: 1px solid;
+  border-radius: 100%;
+  width: fit-content;
+  float: right;
+}
+.stathome__quantity {
+  border-bottom: 1px solid;
+  border-color: grey;
+  margin-bottom: 1rem;
+}
+.cards__icon {
+  color: #8c52ff;
+}
