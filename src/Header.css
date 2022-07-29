@@ -1,0 +1,26 @@
+
+.header__title{
+  margin-top: 4rem;
+    padding-left: 5rem;
+    
+}
+.header__search{
+    display: flex;
+    flex: 1;
+    align-items:center;
+    border-radius: 24px;
+    padding-left: 50rem;
+    padding-right: 15rem;
+}
+.header__searchInput{
+    height: 12px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 100%;
+   
+}
+.header__searchIcon{
+    padding: 5px;
+    height: 22px;
+    background-color:gray;
+}
