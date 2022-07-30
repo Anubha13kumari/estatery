@@ -4,11 +4,14 @@ import {BsSuitHeart} from "react-icons/bs"
 import {MdOutlineBed} from "react-icons/md"
 import {BiBath} from "react-icons/bi"
 import {TbSquareRotated} from "react-icons/tb"
+import Header from "./Header";
 
 function Cards() {
   return (
     <div className="cards__body">
+      <Header/>
       <div className="cards__container">
+      
         <article className="cards__card">
           <div className="stathome__div">
             <img

@@ -1,12 +1,11 @@
-.cards__body {
-  display: flex;
+ .cards__body {
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   gap: 50%;
- 
-  padding-left: 7rem;
+ padding-left: 7rem;
   padding-right: 7rem;
-}
+} 
 .cards__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
