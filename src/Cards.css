@@ -21,8 +21,7 @@
   width: 100%;
 }
 .cards__heart {
-  border: 1px solid;
-  border-radius: 50%;
+  font-size: 1.8rem;
   width: fit-content;
   float: right;
   padding: 0.5rem;

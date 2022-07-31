@@ -31,7 +31,7 @@ const Navbar = () => {
         style={{
           backgroundColor: "White",
         }}
-        maxWidth="xl"
+        maxWidth="auto"
       >
         <Toolbar disableGutters>
           <Typography
@@ -46,6 +46,7 @@ const Navbar = () => {
               fontWeight: 700,
               color: "black",
               textDecoration: "none",
+              alignItems:"center"
             }}
           >
             <div className="nav__icon">
@@ -111,7 +112,7 @@ const Navbar = () => {
             </div>
             Estatery
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" },alignItems:"center" }}>
             {pages.map((page) => (
               <Button
                 key={page}

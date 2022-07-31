@@ -7,23 +7,20 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 function Header({ setFilterData, filterData, data }) {
   const [filter, setFilter] = React.useState(false);
-  const [value, setValue] = React.useState(null);
+  // const [value, setValue] = React.useState(null);
   const [location, setLocation] = React.useState("");
+  const [moveInDate, setMoveInDate] = React.useState(null);
 
   const handleChangeLocation = (event) => {
     setLocation(event.target.value);
   };
-  const [when, setWhen] = React.useState("");
-
-  const handleChangewhen = (event) => {
-    setWhen(event.target.value);
-  };
+  
   const [price, setPrice] = React.useState("");
 
   const handleChangePrice = (event) => {
@@ -34,10 +31,14 @@ function Header({ setFilterData, filterData, data }) {
   const handleChangeProperty = (event) => {
     setProperty(event.target.value);
   };
+  const handleChangeDate = (newValue) => {
+    console.log("date", newValue);
+    setMoveInDate(newValue);
+  };
   useEffect(() => {
     let tempData = [...data];
     if (property) {
-      tempData = tempData.filter((item) => item.property == property);
+      tempData = tempData.filter((item) => item.property === property);
     }
     if (price) {
       let priceArray = price.split("-");
@@ -48,7 +49,31 @@ function Header({ setFilterData, filterData, data }) {
       );
     }
     if (location) {
-      tempData = tempData.filter((item) => item.location == location);
+      tempData = tempData.filter((item) => item.location === location);
+    }
+    if (moveInDate) {
+      let month = new Date(moveInDate).getUTCMonth();
+      let date = new Date(moveInDate).getUTCDate();
+      let year = new Date(moveInDate).getUTCFullYear();
+      let hashMap = {
+        January: 0,
+        February: 1,
+        March: 2,
+        April: 3,
+        May: 4,
+        June: 5,
+        July: 6,
+        August: 7,
+        September: 8,
+        October: 9,
+        November: 10,
+        December: 11,
+      };
+      tempData = tempData.filter(
+        (item) => month <= hashMap[item.date[0]] && year <= item.date[2]
+      );
+      tempData = tempData.filter((item) => date <= item.date[1]);
+      console.log("filtered: ", tempData);
     }
     setFilterData(tempData);
     setFilter(false);
@@ -56,8 +81,8 @@ function Header({ setFilterData, filterData, data }) {
   return (
     <div className="header__container">
       <div className="header__title">
-        <h1>Search Properties for Rent</h1>
         <div className="header__search">
+          <h1 className="header_title_text">Search Properties for Rent</h1>
           <select className="header__select">
             <option value="">Search with search bar</option>
           </select>
@@ -86,23 +111,20 @@ function Header({ setFilterData, filterData, data }) {
               label="Location"
               onChange={handleChangeLocation}
             >
-              <MenuItem value={"New York,USA"}>New york,USA</MenuItem>
+              <MenuItem value={"New York,USA"}>New York,USA</MenuItem>
               <MenuItem value={"Texas,USA"}>Texas,USA</MenuItem>
               <MenuItem value={"California,USA"}>California,USA</MenuItem>
             </Select>
           </FormControl>
 
-           <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <DatePicker
-        label="Select Move-in Date"
-        value={value}
-        onChange={(newValue) => {
-          console.log("date",newValue);
-          setValue(newValue);
-        }}
-        renderInput={(params) => <TextField {...params} />}
-      />
-    </LocalizationProvider> 
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+              label="Select Move-in Date"
+              value={moveInDate}
+              onChange={handleChangeDate}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
           <FormControl style={{ flex: "auto" }}>
             <InputLabel id="demo-simple-select-label">Price</InputLabel>
             <Select

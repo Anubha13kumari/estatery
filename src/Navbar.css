@@ -6,21 +6,29 @@
 .nav__selectdiv{
  display: flex;
  flex-direction: row;
- margin-top: 1.3rem;
  gap: 1rem;
 }
 .nav__select{
-    width: 10vw;
+    width: fit-content;
     height: 4vh;
     border-radius: 0.2rem;
     border-color: grey;
     border: none;
-    
+    outline: none;
+    background-color: transparent;
+    color: #8c52ff;
+    font-size: 0.875rem;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
 }
 .nav__select1{
-    width: 8vw;
+    width: fit-content;
     height: 4vh;
     border-radius: 0.2rem;
     border-color: grey;
     border: none;
+    outline: none;
+    background-color: transparent;
+    color: #8c52ff;
+    font-size: 0.875rem;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
 }
