@@ -9,27 +9,20 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import {RiHomeSmile2Fill} from "react-icons/ri";
-import './Navbar.css';
+import { RiHomeSmile2Fill } from "react-icons/ri";
+import "./Navbar.css";
 
 const pages = ["Rent", "Buy", "Sell"];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [age, setAge] = React.useState("");
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  
- const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
 
- const handleChange = (event) => {
-    setAge(event.target.value);
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
   };
 
   return (
@@ -51,12 +44,12 @@ const Navbar = () => {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              color: "#8c52ff",
+              color: "black",
               textDecoration: "none",
             }}
           >
             <div className="nav__icon">
-            <RiHomeSmile2Fill/>
+              <RiHomeSmile2Fill />
             </div>
             Estatery
           </Typography>
@@ -109,12 +102,12 @@ const Navbar = () => {
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              color: "#8c52ff",
+              color: "black",
               textDecoration: "none",
             }}
           >
             <div className="nav__icon">
-            <RiHomeSmile2Fill/>
+              <RiHomeSmile2Fill />
             </div>
             Estatery
           </Typography>
@@ -127,44 +120,18 @@ const Navbar = () => {
                   my: 2,
                   color: "#8c52ff",
                   display: "block",
-                  border: "1px solid white",
                 }}
               >
                 {page}
               </Button>
             ))}
-            <div>
-              <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <Select
-                  value={age}
-                  onChange={handleChange}
-                  displayEmpty
-                  inputProps={{ "aria-label": "Without label" }}
-                >
-                  <MenuItem value="">
-                    <em>Manage Property</em>
-                  </MenuItem>
-                  <MenuItem></MenuItem>
-                  <MenuItem></MenuItem>
-                  <MenuItem></MenuItem>
-                </Select>
-              </FormControl>
-
-              <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <Select
-                  value={age}
-                  onChange={handleChange}
-                  displayEmpty
-                  inputProps={{ "aria-label": "Without label" }}
-                >
-                  <MenuItem value="">
-                    <em>Resources</em>
-                  </MenuItem>
-                  <MenuItem></MenuItem>
-                  <MenuItem></MenuItem>
-                  <MenuItem></MenuItem>
-                </Select>
-              </FormControl>
+            <div className="nav__selectdiv">
+              <select className="nav__select">
+                <option value="">Manage property</option>
+              </select>
+              <select className="nav__select1">
+                <option value="">Resources</option>
+              </select>
             </div>
           </Box>
 

@@ -1,14 +1,12 @@
-import './App.css';
-import Navbar from './Navbar';
-
-import Cards from './Cards'
+import "./App.css";
+import Navbar from "./Navbar";
+import Cards from "./Cards";
 
 function App() {
   return (
     <div className="App">
-     <Navbar/>
-     
-     <Cards/>
+      <Navbar />
+      <Cards />
     </div>
   );
 }

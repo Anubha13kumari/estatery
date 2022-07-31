@@ -13,8 +13,7 @@ function Cards() {
         "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       price: " 2,400",
       title: "Palm Harbour ",
-      location:
-        "New York,USA",
+      location: "New York,USA",
       noOfBathroom: "2 bathrooms",
       noOfBeds: "3 beds",
       area: "5*7 m2",
@@ -29,18 +28,18 @@ function Cards() {
       noOfBathroom: "3 bathrooms",
       noOfBeds: "4 beds",
       area: "9*6 m2",
-      property: "Bunglow",
+      property: "House",
     },
     {
       imageUrl:
         "https://assets.architecturaldigest.in/photos/60083e76274aca243711c3a4/16:9/w_2560%2Cc_limit/ghaziabad-uttar-pradesh-homes-photos-1366x768.jpg",
-      price: 1800,
+      price: 600,
       title: "Paul",
       location: "New York,USA",
       noOfBathroom: "1 bathroom",
       noOfBeds: "2 beds",
       area: "4*3 m2",
-      property: "Bunglow",
+      property: "Flat",
     },
     {
       imageUrl:
@@ -56,7 +55,7 @@ function Cards() {
     {
       imageUrl:
         "https://img.onmanorama.com/content/dam/mm/en/lifestyle/decor/images/2021/4/4/tiruvalla-nri-home-c.jpg",
-      price: 4500,
+      price: 1800,
       title: "Hibert",
       location: "California,USA",
       noOfBathroom: "4 bathrooms",
@@ -78,7 +77,7 @@ function Cards() {
     {
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtPPbztZJ5wnmscxpz6l1hAh7Z3O9xoDFPPQ&usqp=CAU",
-      price: 3500,
+      price: 3000,
       title: "William",
       location: "Texas,USA",
       noOfBathroom: "3 bathrooms",
@@ -88,24 +87,57 @@ function Cards() {
     },
     {
       imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtPPbztZJ5wnmscxpz6l1hAh7Z3O9xoDFPPQ&usqp=CAU",
-      price: 3500,
+        "https://images.familyhomeplans.com/cdn-cgi/image/fit=scale-down,quality=85/plans/41438/41438-b580.jpg",
+      price: 4000,
       title: "William",
       location: "New York,USA",
       noOfBathroom: "3 bathrooms",
-      noOfBeds: "5 beds",
-      area: "10*7 m2 ",
+      noOfBeds: "4 beds",
+      area: "11*9 m2 ",
       property: "House",
     },
     {
       imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtPPbztZJ5wnmscxpz6l1hAh7Z3O9xoDFPPQ&usqp=CAU",
-      price: 3500,
+        "https://cdn.houseplansservices.com/product/63moi3e6vg5mbb8rmk0jcug42k/w620x413.jpg?v=18",
+      price: 7000,
       title: "William",
       location: "California,USA",
       noOfBathroom: "3 bathrooms",
-      noOfBeds: "5 beds",
-      area: "10*7 m2 ",
+      noOfBeds: "6 beds",
+      area: "11*8 m2 ",
+      property: "House",
+    },
+    {
+      imageUrl:
+        "https://images.adsttc.com/media/images/629f/3517/c372/5201/650f/1c7f/large_jpg/hyde-park-house-robeson-architects_1.jpg?1654601149",
+      price: 8000,
+      title: "William",
+      location: "New York,USA",
+      noOfBathroom: "3 bathrooms",
+      noOfBeds: "7 beds",
+      area: "13*8 m2 ",
+      property: "Bunglow",
+    },
+    {
+      imageUrl:
+        "https://images.familyhomeplans.com/cdn-cgi/image/fit=scale-down,quality=85/plans/44207/44207-b580.jpg",
+      price: 6500,
+      title: "William",
+      location: "Texas,USA",
+      noOfBathroom: "3 bathrooms",
+      noOfBeds: "6 beds",
+      area: "12*7 m2 ",
+      property: "Bunglow",
+    },
+    {
+      imageUrl:
+        "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2019/2/7/3/BP_HHMTN310_Bolden_home-exterior_AFTER_0132.jpg.rend.hgtvcom.966.644.suffix/1549585070420.jpeg",
+      price: 4800,
+      title: "William",
+      location: "New York,USA",
+      noOfBathroom: "3 bathrooms",
+      noOfBeds: "4 beds",
+      area: "10*5 m2 ",
       property: "House",
     },
   ];
@@ -113,30 +145,38 @@ function Cards() {
 
   return (
     <div className="cards__body">
-      <Header setFilterData={setFilterData} filterData={filterData} data={data}/>
+      <Header
+        setFilterData={setFilterData}
+        filterData={filterData}
+        data={data}
+      />
       <div className="cards__container">
         {filterData.map((item) => (
           <article className="cards__card">
-            <div className="stathome__div">
-              <img className="stathome__img" src={item.imageUrl} alt=""></img>
-              <h5 className="stathome__info">${item.price}<small>/per month</small></h5>
-              
+            <div className="cards__div">
+              <img className="cards__img" src={item.imageUrl} alt=""></img>
+              <h3 className="cards__price">
+                ${item.price}
+                <small>/month</small>
+              </h3>
               <div className="cards__heart">
                 <BsSuitHeart className="card__icon" />
               </div>
-            </div>
-            <div className="stathome__quantity">
-            <small>{item.property}</small>
-              <h3>{item.title}</h3>
-            <small>{item.location}</small>
-            </div>
-            
-            <div>
-              <div>
-                <MdOutlineBed className="card__icon" /> {item.noOfBeds} <BiBath className="card__icon" />
-                {item.noOfBathroom} <TbSquareRotated className="card__icon" />
-                {item.area}
+              <div className="cards__quantity">
+                <small>{item.property}</small>
+                <div className="cards__title">
+                  <h3>{item.title}</h3>
+                </div>
+                <div className="cards__location">
+                  <small>{item.location}</small>
+                </div>
               </div>
+            </div>
+            <div className="cards__detail">
+              <MdOutlineBed className="card__icon" /> {item.noOfBeds}{" "}
+              <BiBath className="card__icon" />
+              {item.noOfBathroom} <TbSquareRotated className="card__icon" />
+              {item.area}
             </div>
           </article>
         ))}

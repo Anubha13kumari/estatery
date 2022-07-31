@@ -6,9 +6,14 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import TextField from "@mui/material/TextField";
+// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-function Header({ setFilterData, filterData ,data}) {
-  const [filter,setFilter]=React.useState(false);
+function Header({ setFilterData, filterData, data }) {
+  const [filter, setFilter] = React.useState(false);
+  const [value, setValue] = React.useState(null);
   const [location, setLocation] = React.useState("");
 
   const handleChangeLocation = (event) => {
@@ -30,27 +35,33 @@ function Header({ setFilterData, filterData ,data}) {
     setProperty(event.target.value);
   };
   useEffect(() => {
-    let tempData=[...data]
-   if(property ){
-   tempData=tempData.filter((item)=>item.property==property)
-}
-if(price ){
-  let priceArray=price.split("-");
-  let minimumPrice=parseInt(priceArray[0]);
-  let maximumPrice=parseInt(priceArray[1]);
-  tempData=tempData.filter((item)=>item.price >= minimumPrice && item.price <= maximumPrice)
-}
-if(location ){
-  tempData=tempData.filter((item)=>item.location==location)
-}
-  setFilterData(tempData);
-  setFilter(false);
+    let tempData = [...data];
+    if (property) {
+      tempData = tempData.filter((item) => item.property == property);
+    }
+    if (price) {
+      let priceArray = price.split("-");
+      let minimumPrice = parseInt(priceArray[0]);
+      let maximumPrice = parseInt(priceArray[1]);
+      tempData = tempData.filter(
+        (item) => item.price >= minimumPrice && item.price <= maximumPrice
+      );
+    }
+    if (location) {
+      tempData = tempData.filter((item) => item.location == location);
+    }
+    setFilterData(tempData);
+    setFilter(false);
   }, [filter]);
   return (
     <div className="header__container">
       <div className="header__title">
         <h1>Search Properties for Rent</h1>
-        <div className="header__search"></div>
+        <div className="header__search">
+          <select className="header__select">
+            <option value="">Search with search bar</option>
+          </select>
+        </div>
       </div>
       <div className="header__filtercontainer">
         <Box
@@ -81,20 +92,16 @@ if(location ){
             </Select>
           </FormControl>
 
-          <FormControl style={{ flex: "auto" }}>
-            <InputLabel id="demo-simple-select-label">When</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={when}
-              label="When"
-              onChange={handleChangewhen}
-            >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl>
+          {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <DatePicker
+        label="Basic example"
+        value={value}
+        onChange={(newValue) => {
+          setValue(newValue);
+        }}
+        renderInput={(params) => <TextField {...params} />}
+      />
+    </LocalizationProvider> */}
           <FormControl style={{ flex: "auto" }}>
             <InputLabel id="demo-simple-select-label">Price</InputLabel>
             <Select
@@ -131,7 +138,7 @@ if(location ){
               height: "7vh",
             }}
             variant="contained"
-            onClick={()=> setFilter(true)}
+            onClick={() => setFilter(true)}
           >
             Search
           </Button>

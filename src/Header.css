@@ -1,17 +1,33 @@
-.header__filtercontainer{
-    /* width: 40%; */
-    height: 10vh;
-    border: 1px solid;
-    border-color: white;
-    /* padding-left: 20rem; */
-    /* margin-left: 13rem; */
-    border-radius: 1rem;
-    display: flex;
-   justify-items: center;
-   align-items: center;
-   gap: 1rem;
-   padding: 0.5rem;
-   background-color:white;
-   
+.header__filtercontainer {
+  height: 10vh;
+  border: 1px solid;
+  border-color: white;
+  border-radius: 1rem;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+}
+.header__select {
+  width: 95%;
+  height: 3.5vh;
+  border-radius: 0.2rem;
+  border-color: grey;
+}
 
+.header__title {
+  margin-top: 5rem;
+  display: inline;
+}
+.header__search {
+  display: flex;
+  flex: 1;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 24px;
+  padding-left: 60rem;
+  margin-bottom: 1rem;
 }
