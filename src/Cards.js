@@ -18,6 +18,7 @@ function Cards() {
       noOfBeds: "3 beds",
       area: "5*7 m2",
       property: "Bunglow",
+      date: ["January","04","2022"],
     },
     {
       imageUrl:
@@ -29,6 +30,7 @@ function Cards() {
       noOfBeds: "4 beds",
       area: "9*6 m2",
       property: "House",
+      date: ["February","04","2022"],
     },
     {
       imageUrl:
@@ -40,6 +42,7 @@ function Cards() {
       noOfBeds: "2 beds",
       area: "4*3 m2",
       property: "Flat",
+      date: ["Mon","04","2022"],
     },
     {
       imageUrl:
@@ -51,6 +54,7 @@ function Cards() {
       noOfBeds: "5 beds",
       area: "9*8 m2",
       property: "House",
+      date: ["Mon","04","2022"],
     },
     {
       imageUrl:
@@ -62,6 +66,7 @@ function Cards() {
       noOfBeds: "6 beds",
       area: "12*15 m2",
       property: "Flat",
+      date: ["Mon","04","2022"],
     },
     {
       imageUrl:
@@ -73,6 +78,7 @@ function Cards() {
       noOfBeds: "7 beds",
       area: "25*18 m2",
       property: "Bunglow",
+      date: ["Sun","13","2022"],
     },
     {
       imageUrl:
@@ -84,6 +90,7 @@ function Cards() {
       noOfBeds: "5 beds",
       area: "10*7 m2 ",
       property: "Flat",
+      date: ["Mon","04","2022"],
     },
     {
       imageUrl:
@@ -95,6 +102,7 @@ function Cards() {
       noOfBeds: "4 beds",
       area: "11*9 m2 ",
       property: "House",
+      date: ["Sat","10","2022"],
     },
     {
       imageUrl:
@@ -106,6 +114,7 @@ function Cards() {
       noOfBeds: "6 beds",
       area: "11*8 m2 ",
       property: "House",
+      date: ["Mon","02","2022"],
     },
     {
       imageUrl:
@@ -117,6 +126,7 @@ function Cards() {
       noOfBeds: "7 beds",
       area: "13*8 m2 ",
       property: "Bunglow",
+      date: ["Thur","08","2022"],
     },
     {
       imageUrl:
@@ -128,6 +138,7 @@ function Cards() {
       noOfBeds: "6 beds",
       area: "12*7 m2 ",
       property: "Bunglow",
+      date: ["Wed","01","2022"],
     },
     {
       imageUrl:
@@ -139,6 +150,7 @@ function Cards() {
       noOfBeds: "4 beds",
       area: "10*5 m2 ",
       property: "House",
+      date: ["Tue","06","2022"],
     },
   ];
   const [filterData, setFilterData] = useState(data);

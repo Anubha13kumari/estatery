@@ -7,9 +7,9 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
-// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 function Header({ setFilterData, filterData, data }) {
   const [filter, setFilter] = React.useState(false);
@@ -92,16 +92,17 @@ function Header({ setFilterData, filterData, data }) {
             </Select>
           </FormControl>
 
-          {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
+           <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DatePicker
-        label="Basic example"
+        label="Select Move-in Date"
         value={value}
         onChange={(newValue) => {
+          console.log("date",newValue);
           setValue(newValue);
         }}
         renderInput={(params) => <TextField {...params} />}
       />
-    </LocalizationProvider> */}
+    </LocalizationProvider> 
           <FormControl style={{ flex: "auto" }}>
             <InputLabel id="demo-simple-select-label">Price</InputLabel>
             <Select
